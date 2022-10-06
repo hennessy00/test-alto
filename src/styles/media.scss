@@ -1,0 +1,15 @@
+@media(max-width: 991px) {
+  .card__spoiler{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media(max-width: 576px) {
+  .container{
+    padding: 0 20px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

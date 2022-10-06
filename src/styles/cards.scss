@@ -1,0 +1,94 @@
+.cards {
+  margin-bottom: 13em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-blue-3;
+  box-shadow: 0px 3px 6px #DFEAFC;
+  background-color: #fff;
+  z-index: 0;
+  @include transition();
+
+  &:hover {
+    z-index: 1;
+    box-shadow: 0px 6px 12px #D5E0EF;
+
+    .card__spoiler {
+      opacity: 1;
+      visibility: visible;
+      box-shadow: 0px 12px 12px #D5E0EF;
+    }
+  }
+
+  &__img {
+    padding: 20px;
+    border-bottom: 1px solid $color-blue-3;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px 10px 20px;
+  }
+
+  &__badge {
+    margin-bottom: 1em;
+    padding: 4px 10px;
+    font-size: 12px;
+    background-color: $color-blue-2;
+    color: #fff;
+
+    &_availability {
+      background-color: $color-green;
+      font-weight: 700;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.8em;
+    font-size: 16px;
+    text-decoration-line: underline;
+  }
+
+  &__cost {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__spoiler {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    right: -1px;
+    width: calc(100% + 2px);
+    padding: 0 20px 20px 20px;
+    border: 1px solid $color-blue-3;
+    border-top-color: transparent;
+    background-color: #fff;
+    box-shadow: 0px 6px 6px #DFEAFC;
+    font-size: 12px;
+    color: $color-gray;
+    @include transition();
+  }
+
+  &__props {
+    margin-bottom: 10px;
+    span {
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+  }
+}

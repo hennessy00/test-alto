@@ -1,0 +1,43 @@
+.pagination {
+  margin-bottom: 4em;
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    margin: 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    min-width: 32px;
+    background-color: $color-blue-4;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 700;
+    @include transition();
+    &:hover{
+      background-color: $color-blue-3;
+    }
+
+    &_long {
+      margin: 0 15px;
+      padding: 0 18px;
+      font-weight: 400;
+    }
+
+    &_current {
+      pointer-events: none;
+      color: #fff;
+      background-color: $color-blue;
+      &:hover{
+        background-color: $color-blue;
+      }
+    }
+
+    &_disabled {
+      user-select: none;
+      pointer-events: none;
+      color: #9FAABA;
+    }
+  }
+}
