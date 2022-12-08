@@ -16,7 +16,7 @@ export const ProductsPageTemplate = (props) => {
     useEffect(() => {
         const skipParam = productsPage ? `?skip=${productsPage * 4}` : '';
         const PROXY =
-            window.location.host.indexOf('local') !== -1
+            window.location.host.indexOf('local') == -1
                 ? 'https://api.codetabs.com/v1/proxy/?quest='
                 : ''; //for vercel demo
 
