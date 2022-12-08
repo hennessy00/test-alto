@@ -15,11 +15,17 @@ export const ProductsPageTemplate = (props) => {
 
     useEffect(() => {
         const skipParam = productsPage ? `?skip=${productsPage * 4}` : '';
+        const PROXY =
+            window.location.host.indexOf('local') !== -1
+                ? 'https://api.codetabs.com/v1/proxy/?quest='
+                : ''; //for vercel demo
 
-        request(`http://testtask.alto.codes/front-products.php${skipParam}`).then((response) => {
-            setCards(response.products);
-            allCounts.current = response.totalCount;
-        });
+        request(`${PROXY}http://testtask.alto.codes/front-products.php${skipParam}`).then(
+            (response) => {
+                setCards(response.products);
+                allCounts.current = response.totalCount;
+            }
+        );
         // eslint-disable-next-line
     }, [productsPage]);
 
